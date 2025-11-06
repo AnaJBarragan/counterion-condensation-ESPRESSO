@@ -26,10 +26,10 @@ import espressomd.interactions
 import espressomd.visualization
 import numpy as np
 
-print("Hasnt crashed yet")
+#print("Hasnt crashed yet")
 required_features = ["LENNARD_JONES"]
 espressomd.assert_features(required_features)
-print("Asserted Lennerd Jones feature enabled")
+#print("Asserted Lennerd Jones feature enabled")
 
 box_l = 50
 n_part = 200
@@ -51,19 +51,19 @@ for i in range(n_part):
         part.add_bond((system.bonded_inter[0], previous_part))
     previous_part = part
 
-print("just before visualize")
+#print("just before visualize")
 visualizer = espressomd.visualization.openGLLive(
     system, bond_type_radius=[0.3])
-print("just after visualize")
+#print("just after visualize")
 
 system.integrator.set_steepest_descent(f_max=10, gamma=50.0,
                                       max_displacement=0.2)
-print("just before integrator.run")
+#print("just before integrator.run")
 system.integrator.run(1000)
-print("just after integrator.run")
+#print("just after integrator.run")
 
 system.integrator.set_vv()
 
 system.thermostat.set_langevin(kT=0.1, gamma=20.0, seed=42)
-print("just before visualizer.run")
+#print("just before visualizer.run")
 visualizer.run(1)
