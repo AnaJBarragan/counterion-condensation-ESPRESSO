@@ -8,7 +8,11 @@ export DISPLAY=:99
 x11vnc -display :99 -nopw -forever &
 
 #Python ≠ Pypresso
-cd /home/espresso/notebooks/Counterion\ Condensation/Charged_systems_mod/
+
 ~/espresso-src/build/pypresso visualization_bonded.py 
 ~/espresso-src/build/pypresso visualization_aggregate.py
+
+Verify that variables used by espresso are those we expect/want by adding print variable statement checks
+Check Ovito
+
 ```
