@@ -117,7 +117,7 @@ else:
 
 visualizer = espressomd.visualization.openGLLive(
     system,
-    particle_sizes= 'auto',
+    particle_sizes= 'auto', #####SUSPECTED PROBLEM
     background_color=[1, 1, 1],  # White background
     camera_position=[box_size*1.5, box_size*1.5, box_size*1.5],
     camera_target=[box_size*0.5, box_size*0.5, box_size*0.5],
